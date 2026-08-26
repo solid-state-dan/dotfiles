@@ -2,11 +2,12 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 7, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+    	"niri/workspaces",
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad"
@@ -15,16 +16,17 @@
         "sway/window"
     ],
     "modules-right": [
+        // "sway/language",
         "tray",
         "network",
+        "pulseaudio",
         "cpu",
         "memory",
         "temperature",
         "backlight",
-        "battery",
-        "power-profiles-daemon",
-        "pulseaudio",
-        "sway/language",
+        "battery#internal",
+        "battery#external",
+		"power-profiles-daemon",
         "clock"
     ],
     // Modules configuration
@@ -127,7 +129,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format-icons": ["_", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
     "battery": {
         "states": {
@@ -146,6 +148,19 @@
     },
     "battery#bat2": {
         "bat": "BAT2"
+    },
+    "battery#internal": {
+        "bat": "BAT0",
+        "states": { "critical": 15 },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    
+    "battery#external": {
+        "bat": "BAT1",
+        "states": { "critical": 15 },
+        "format": "External: {capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
     "power-profiles-daemon": {
       "format": "{icon}",
