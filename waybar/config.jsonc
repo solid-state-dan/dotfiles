@@ -1,22 +1,19 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 7, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-    	"niri/workspaces",
+    	// "niri/workspaces",
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad"
     ],
     "modules-center": [
-        "sway/window"
-    ],
-    "modules-right": [
-        // "sway/language",
+        "sway/window",
         "tray",
         "network",
         "pulseaudio",
@@ -26,9 +23,12 @@
         "backlight",
         "battery#internal",
         "battery#external",
-		"power-profiles-daemon",
+        "power-profiles-daemon",
         "clock"
     ],
+    //"modules-right": [
+        // "sway/language",
+    // ],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,

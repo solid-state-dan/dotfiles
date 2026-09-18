@@ -138,7 +138,7 @@ button:hover {
 }
 
 #battery {
-    background-color: #2d3436;
+    background-color: transparent;
     color: #00ffc3;
 }
 
@@ -345,4 +345,3 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
-
